@@ -1,9 +1,10 @@
 import "./App.css";
+import Square from "./components/Square";
 
 function App() {
   return (
     <div>
-      <p className="text-red-400 text-4xl">hello world</p>
+      <Square/>
     </div>
   );
 }
