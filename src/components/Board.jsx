@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+
 import Square from "./Square";
 
-function Board() {
-    const [Squares , setSquare ]= useState(Array(9).fill(null));
-    const [xIsNext , setXIsNext]=useState(true)
+export default function Board({xIsNext , Squares , onPlay }) {
+    
     const winner = calculateWinner(Squares)
     let stutas ;
     if(winner){
@@ -21,8 +20,7 @@ function Board() {
       }else{
         nextSqares[i]="O"
       }
-      setSquare(nextSqares)
-      setXIsNext(!xIsNext)
+      onPlay(nextSqares)
     }
 
   return (
@@ -49,7 +47,7 @@ function Board() {
   );
 }
 
-export default Board;
+
 
 function calculateWinner(Squares){
   const lines = [
